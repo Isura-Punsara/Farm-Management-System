@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{655059BC-68E7-4BA3-A4DD-58347AF2B067}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Farm</RootNamespace>
+    <AssemblyName>Farm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BreedingData.cs">
+      <DependentUpon>BreedingData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BreedingData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BreedingData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="breedreportview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="breedreportview.Designer.cs">
+      <DependentUpon>breedreportview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cheenvcon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheenvcon.Designer.cs">
+      <DependentUpon>cheenvcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cheenvrec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheenvrec.Designer.cs">
+      <DependentUpon>cheenvrec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cheenvrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheenvrep.Designer.cs">
+      <DependentUpon>cheenvrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cheeqad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheeqad.Designer.cs">
+      <DependentUpon>cheeqad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cheeqrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheeqrep.Designer.cs">
+      <DependentUpon>cheeqrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cheequp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheequp.Designer.cs">
+      <DependentUpon>cheequp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cheeqviw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cheeqviw.Designer.cs">
+      <DependentUpon>cheeqviw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chemedadd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chemedadd.Designer.cs">
+      <DependentUpon>chemedadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chemedinv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chemedinv.Designer.cs">
+      <DependentUpon>chemedinv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chemedupd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chemedupd.Designer.cs">
+      <DependentUpon>chemedupd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chereps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chereps.Designer.cs">
+      <DependentUpon>chereps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crepviewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crepviewer.Designer.cs">
+      <DependentUpon>Crepviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cusreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cusreport.Designer.cs">
+      <DependentUpon>cusreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dircusreps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dircusreps.Designer.cs">
+      <DependentUpon>dircusreps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dirfinrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dirfinrep.Designer.cs">
+      <DependentUpon>dirfinrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dirhis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dirhis.Designer.cs">
+      <DependentUpon>dirhis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dirmonbudg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dirmonbudg.Designer.cs">
+      <DependentUpon>dirmonbudg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="empreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empreport.Designer.cs">
+      <DependentUpon>empreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fcosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fcosts.Designer.cs">
+      <DependentUpon>fcosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeedingData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedingData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="feedreportview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedreportview.Designer.cs">
+      <DependentUpon>feedreportview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="finadata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="finadata.Designer.cs">
+      <DependentUpon>finadata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="finreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="finreport.Designer.cs">
+      <DependentUpon>finreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmaniprof.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmaniprof.Designer.cs">
+      <DependentUpon>fmaniprof.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmaniproup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmaniproup.Designer.cs">
+      <DependentUpon>fmaniproup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmbredrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmbredrep.Designer.cs">
+      <DependentUpon>fmbredrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmempprof.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmempprof.Designer.cs">
+      <DependentUpon>fmempprof.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmempup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmempup.Designer.cs">
+      <DependentUpon>fmempup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmexp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmexp.Designer.cs">
+      <DependentUpon>fmexp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmfedcun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmfedcun.Designer.cs">
+      <DependentUpon>fmfedcun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmfedsch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmfedsch.Designer.cs">
+      <DependentUpon>fmfedsch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmhealsch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmhealsch.Designer.cs">
+      <DependentUpon>fmhealsch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fminc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fminc.Designer.cs">
+      <DependentUpon>fminc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fminv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fminv.Designer.cs">
+      <DependentUpon>fminv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fminvrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fminvrep.Designer.cs">
+      <DependentUpon>fminvrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmmonatt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmmonatt.Designer.cs">
+      <DependentUpon>fmmonatt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmprof.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmprof.Designer.cs">
+      <DependentUpon>fmprof.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmrecsup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmrecsup.Designer.cs">
+      <DependentUpon>fmrecsup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmsupprof.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmsupprof.Designer.cs">
+      <DependentUpon>fmsupprof.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmsuprep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmsuprep.Designer.cs">
+      <DependentUpon>fmsuprep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmsupup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmsupup.Designer.cs">
+      <DependentUpon>fmsupup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmtaskrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmtaskrep.Designer.cs">
+      <DependentUpon>fmtaskrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmtsk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmtsk.Designer.cs">
+      <DependentUpon>fmtsk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hisdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hisdata.Designer.cs">
+      <DependentUpon>hisdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signup.Designer.cs">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="supatten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supatten.Designer.cs">
+      <DependentUpon>supatten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supfedrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supfedrep.Designer.cs">
+      <DependentUpon>supfedrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="suphealrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suphealrep.Designer.cs">
+      <DependentUpon>suphealrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supinvrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supinvrep.Designer.cs">
+      <DependentUpon>supinvrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="supreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supreport.Designer.cs">
+      <DependentUpon>supreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupRepView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupRepView.Designer.cs">
+      <DependentUpon>SupRepView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="suptask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suptask.Designer.cs">
+      <DependentUpon>suptask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supupdtask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supupdtask.Designer.cs">
+      <DependentUpon>supupdtask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateusers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateusers.Designer.cs">
+      <DependentUpon>updateusers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vetanihealcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetanihealcs.Designer.cs">
+      <DependentUpon>vetanihealcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vetbredrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetbredrep.Designer.cs">
+      <DependentUpon>vetbredrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vetbredsch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetbredsch.Designer.cs">
+      <DependentUpon>vetbredsch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vethealch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vethealch.Designer.cs">
+      <DependentUpon>vethealch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vethealrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vethealrep.Designer.cs">
+      <DependentUpon>vethealrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vetmedinv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetmedinv.Designer.cs">
+      <DependentUpon>vetmedinv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vettreat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vettreat.Designer.cs">
+      <DependentUpon>vettreat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vetvac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetvac.Designer.cs">
+      <DependentUpon>vetvac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vetvetvis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vetvetvis.Designer.cs">
+      <DependentUpon>vetvetvis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viewusers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewusers.Designer.cs">
+      <DependentUpon>Viewusers.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Breeding Report.rdlc" />
+    <EmbeddedResource Include="breedreportview.resx">
+      <DependentUpon>breedreportview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheenvcon.resx">
+      <DependentUpon>cheenvcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheenvrec.resx">
+      <DependentUpon>cheenvrec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheenvrep.resx">
+      <DependentUpon>cheenvrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheeqad.resx">
+      <DependentUpon>cheeqad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheeqrep.resx">
+      <DependentUpon>cheeqrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheequp.resx">
+      <DependentUpon>cheequp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cheeqviw.resx">
+      <DependentUpon>cheeqviw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chemedadd.resx">
+      <DependentUpon>chemedadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chemedinv.resx">
+      <DependentUpon>chemedinv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chemedupd.resx">
+      <DependentUpon>chemedupd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chereps.resx">
+      <DependentUpon>chereps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cusreport.resx">
+      <DependentUpon>cusreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dircusreps.resx">
+      <DependentUpon>dircusreps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dirfinrep.resx">
+      <DependentUpon>dirfinrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dirhis.resx">
+      <DependentUpon>dirhis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dirmonbudg.resx">
+      <DependentUpon>dirmonbudg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empreport.resx">
+      <DependentUpon>empreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeedingReport.rdlc" />
+    <EmbeddedResource Include="feedreportview.resx">
+      <DependentUpon>feedreportview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="finadata.resx">
+      <DependentUpon>finadata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="finreport.resx">
+      <DependentUpon>finreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmaniprof.resx">
+      <DependentUpon>fmaniprof.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmaniproup.resx">
+      <DependentUpon>fmaniproup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmbredrep.resx">
+      <DependentUpon>fmbredrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmempprof.resx">
+      <DependentUpon>fmempprof.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmempup.resx">
+      <DependentUpon>fmempup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmexp.resx">
+      <DependentUpon>fmexp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmfedcun.resx">
+      <DependentUpon>fmfedcun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmfedsch.resx">
+      <DependentUpon>fmfedsch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmhealsch.resx">
+      <DependentUpon>fmhealsch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fminc.resx">
+      <DependentUpon>fminc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fminv.resx">
+      <DependentUpon>fminv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fminvrep.resx">
+      <DependentUpon>fminvrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmmonatt.resx">
+      <DependentUpon>fmmonatt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmprof.resx">
+      <DependentUpon>fmprof.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmrecsup.resx">
+      <DependentUpon>fmrecsup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmsupprof.resx">
+      <DependentUpon>fmsupprof.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmsuprep.resx">
+      <DependentUpon>fmsuprep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmsupup.resx">
+      <DependentUpon>fmsupup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmtaskrep.resx">
+      <DependentUpon>fmtaskrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmtsk.resx">
+      <DependentUpon>fmtsk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hisdata.resx">
+      <DependentUpon>hisdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Signup.resx">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supatten.resx">
+      <DependentUpon>supatten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supfedrep.resx">
+      <DependentUpon>supfedrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suphealrep.resx">
+      <DependentUpon>suphealrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supinvrep.resx">
+      <DependentUpon>supinvrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierReport.rdlc" />
+    <EmbeddedResource Include="supreport.resx">
+      <DependentUpon>supreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupRepView.resx">
+      <DependentUpon>SupRepView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suptask.resx">
+      <DependentUpon>suptask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supupdtask.resx">
+      <DependentUpon>supupdtask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateusers.resx">
+      <DependentUpon>updateusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetanihealcs.resx">
+      <DependentUpon>vetanihealcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetbredrep.resx">
+      <DependentUpon>vetbredrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetbredsch.resx">
+      <DependentUpon>vetbredsch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vethealch.resx">
+      <DependentUpon>vethealch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vethealrep.resx">
+      <DependentUpon>vethealrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetmedinv.resx">
+      <DependentUpon>vetmedinv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vettreat.resx">
+      <DependentUpon>vettreat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetvac.resx">
+      <DependentUpon>vetvac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vetvetvis.resx">
+      <DependentUpon>vetvetvis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Viewusers.resx">
+      <DependentUpon>Viewusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BreedingData.xsc">
+      <DependentUpon>BreedingData.xsd</DependentUpon>
+    </None>
+    <None Include="BreedingData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BreedingData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BreedingData.xss">
+      <DependentUpon>BreedingData.xsd</DependentUpon>
+    </None>
+    <None Include="FeedingData.xsc">
+      <DependentUpon>FeedingData.xsd</DependentUpon>
+    </None>
+    <None Include="FeedingData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FeedingData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FeedingData.xss">
+      <DependentUpon>FeedingData.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SupplierData.xsc">
+      <DependentUpon>SupplierData.xsd</DependentUpon>
+    </None>
+    <None Include="SupplierData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SupplierData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SupplierData.xss">
+      <DependentUpon>SupplierData.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Long image 11-24-2024 16.19 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
