@@ -2,10 +2,10 @@
 ---
 # 🐄 Farm Management System — Meat Farm Operations (WinForms + SQL Server)
 
-![GitHub repo size](https://img.shields.io/github/repo-size/your-username/Farm-Management-System?color=green)
-![GitHub contributors](https://img.shields.io/github/contributors/your-username/Farm-Management-System)
-![GitHub stars](https://img.shields.io/github/stars/your-username/Farm-Management-System?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-username/Farm-Management-System?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/Isura-Punsara/Farm-Management-System?color=green)
+![GitHub contributors](https://img.shields.io/github/contributors/Isura-Punsara/Farm-Management-System)
+![GitHub stars](https://img.shields.io/github/stars/Isura-Punsara/Farm-Management-System?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Isura-Punsara/Farm-Management-System?style=social)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20Forms-lightgrey)
 ![Database](https://img.shields.io/badge/Database-SQL%20Server-orange)
