@@ -26,7 +26,7 @@ This repository contains the full Farm Management System, including all major mo
 ---
 
 ## 📂 Project Structure
-Farm-Management-System/
+## Farm-Management-System/
 │
 ├── Farm/
 │   └── Farm/              ← Main WinForms Application
