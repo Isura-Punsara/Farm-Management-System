@@ -1,63 +1,170 @@
-# Farm Management System — Farm
 
-Tech: C#, .NET (Visual Studio), Windows Forms, SQL Server (SqlServerTypes), RDLC reports, NuGet (packages.config)
+---
+# 🐄 Farm Management System — Meat Farm Operations (WinForms + SQL Server)
 
-This folder contains the Farm module/application of the Farm-Management-System repository. The contents are based on the project and source files present in this directory.
+![GitHub repo size](https://img.shields.io/github/repo-size/your-username/Farm-Management-System?color=green)
+![GitHub contributors](https://img.shields.io/github/contributors/your-username/Farm-Management-System)
+![GitHub stars](https://img.shields.io/github/stars/your-username/Farm-Management-System?style=social)
+![GitHub forks](https://img.shields.io/github/forks/your-username/Farm-Management-System?style=social)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-Windows%20Forms-lightgrey)
+![Database](https://img.shields.io/badge/Database-SQL%20Server-orange)
+![Reports](https://img.shields.io/badge/Reports-RDLC-yellow)
 
-## Key files and folders
-- Farm.sln
-- Farm.csproj
-- packages.config
-- App.config
-- Program.cs
-- folders observed: .vs, bin, obj, Properties, Resources, SqlServerTypes
 
-## Source and UI files
-- Windows Forms source files (.cs) with their designer and resource files:
-  - Login.cs / Login.Designer.cs / Login.resx
-  - Signup.cs / Signup.Designer.cs / Signup.resx
-  - Many form implementations and designer files (e.g. fmaniprof.*, fmaniproup.*, fmprof.*, fmsupprof.*, fmtsk.*, fmexp.*, fmrecsup.*, fmrecsup.*, updateusers.*, Viewusers.*, and many che* / cheenv* / cheeq* files)
-- Program entry: Program.cs
-- Numerous .Designer.cs and .resx pairs indicating WinForms UI components
+A complete Windows Forms–based Farm Management System built for a meat-production farm.  
+The system manages breeding, feeding, suppliers, veterinary care, inventory, employees, finance, tasks, attendance, and detailed RDLC reports.
 
-## Data, schema, and typed datasets
-- XSD / XSC / XSS and dataset files for reports/data bindings:
-  - BreedingData.xsd / BreedingData.xsc / BreedingData.xss / BreedingData.cs / BreedingData.Designer.cs
-  - FeedingData.xsd / FeedingData.xsc / FeedingData.xss / FeedingData.Designer.cs
-  - SupplierData.xsd / SupplierData.xsc / SupplierData.xss / SupplierData.Designer.cs
-  - Additional data/designer files seen across the project
+This repository contains the full Farm Management System, including all major modules and the underlying Farm application located inside the `Farm/Farm` folder.
 
-## Reporting
-- RDLC report files and report viewers:
-  - Breeding Report.rdlc
-  - FeedingReport.rdlc
-  - SupplierReport.rdlc
-  - Report1.rdlc
-  - Many report-related form files and report viewer code (e.g. Crepviewer.* and many *rep.* files)
+---
 
-## Domain areas / modules (inferred from filenames)
-The following modules are present in the repository by file name:
-- Authentication: Login, Signup
-- Breeding (BreedingData.*, breeding report, breedreportview.*)
-- Feeding (FeedingData.*, FeedingReport.rdlc, feedreportview.*)
-- Suppliers and Supplier reporting (SupplierData.*, SupplierReport.rdlc, sup* files)
-- Veterinary / Health (vet* files: vetbred*, vetheal*, vetmedinv.*, vettreat.*, vetvac.*, vetvetvis.*)
-- Inventory and inventory reports (fminv*, fminvrep.*)
-- Finance and financial reports (finadata.*, finreport.*)
-- Employee management and reports (emp* / empreport.*)
-- Profiles and user management (fmprof.*, fmaniprof.*, updateusers.*, Viewusers.*)
-- Tasks, schedules and attendance (fmtsk*, fmtaskrep.*, supatten.*, fmfedsch.*, fmmonatt.*)
-- Miscellaneous reporting and report viewers (many che*, cusreport.*, sup* reports)
+## 📌 Tech Stack
+- **Frontend:** Windows Forms (.NET Framework)
+- **Backend:** SQL Server / SQL Express
+- **Reporting:** RDLC Reports
+- **IDE:** Visual Studio 2019 or later
+- **Other:** Report Viewer Runtime, NuGet Packages
 
-## File types present
-- C# source and WinForms UI: .cs, .Designer.cs
-- Resources: .resx
-- Report definitions: .rdlc
-- Typed datasets / XML schema: .xsd, .xsc, .xss
-- Solution/project: .sln, .csproj
-- NuGet package list: packages.config
+---
 
-## Notes
-- This README reflects only the files and filenames present in the Farm/Farm directory of the repository.
-- The contents were derived from project files (filenames and file metadata). The listing used to generate this README may be incomplete due to API listing limits — view the directory in GitHub for the full contents:
-  https://github.com/Isura-Punsara/Farm-Management-System/tree/main/Farm/Farm
+## 📂 Project Structure
+Farm-Management-System/
+│
+├── Farm/
+│   └── Farm/              ← Main WinForms Application
+│       ├── *.cs           (Code-behind files)
+│       ├── *.Designer.cs  (UI Designer)
+│       ├── *.resx         (Resources)
+│       ├── *.rdlc         (Reports)
+│       ├── *.xsd          (Typed Datasets)
+│       ├── Farm.sln       (Solution)
+│       ├── Farm.csproj    (Project)
+│       └── SqlServerTypes/(SQL Client Types)
+│
+└── README.md
+
+---
+
+## ✨ System Overview
+A robust desktop application designed to manage the full lifecycle of a meat farm’s operations:
+
+- ✔ Breeding & animal lineage  
+- ✔ Feeding schedules and consumption  
+- ✔ Supplier management  
+- ✔ Veterinary care & medical inventory  
+- ✔ Employee records & attendance  
+- ✔ Task management  
+- ✔ Inventory tracking  
+- ✔ Finance & expenses  
+- ✔ RDLC reporting for every domain  
+- ✔ Login, Signup, User roles  
+
+---
+
+## 📘 Main Features (Full System)
+
+### 🔐 1. Authentication Module
+- Files: `Login.*`, `Signup.*`  
+- Secure login & signup  
+- User validation  
+- Profile initialization  
+
+### 👤 2. User & Profile Management
+- Files: `fmprof.*`, `fmaniprof.*`, `fmaniproup.*`, `updateusers.*`, `Viewusers.*`  
+- Create / update / delete user accounts  
+- Manage user groups & permissions  
+- Search and filter users  
+- Profile picture & personal info  
+
+### 🐄 3. Animal Breeding Management
+- Files: `BreedingData.*`, `Breeding Report.rdlc`, `breedreportview.*`  
+- Record breeding cycles  
+- Breeding history  
+- Generate breeding RDLC reports  
+- Typed datasets for reporting  
+
+### 🥩 4. Feeding Management
+- Files: `FeedingData.*`, `FeedingReport.rdlc`, `fmfedsch.*`, `fmfedcun.*`  
+- Feeding schedules  
+- Consumption tracking  
+- Feed stock usage  
+- Feeding reports  
+
+### 🚚 5. Supplier Management
+- Files: `SupplierData.*`, `SupplierReport.rdlc`, `sup*.*`  
+- Supplier details  
+- Supplier attendance  
+- Supplier deliveries  
+- Supplier feeding & health contributions  
+- Reports for each  
+
+### 🐑 6. Veterinary & Health Module
+- Files: `vetbred*`, `vetheal*`, `vetmedinv.*`, `vettreat.*`, `vetvac.*`  
+- Animal treatments  
+- Vaccination schedules  
+- Veterinary visits  
+- Medical inventory  
+- Health reports (RDLC)  
+
+### 📦 7. Inventory Management
+- Files: `fminv.*`, `fminvrep.*`  
+- Equipment  
+- Feed  
+- Medical supplies  
+- Stock levels  
+- Inventory valuation  
+- Inventory reports  
+
+### 💰 8. Finance & Expense Tracking
+- Files: `finadata.*`, `finreport.*`  
+- Farm expenses  
+- Supplier payments  
+- Financial summaries  
+- RDLC finance reports  
+
+### 👥 9. Employee Management
+- Files: `emp*`, `empreport.*`  
+- Employee profiles  
+- Role assignment  
+- Leave & attendance  
+- Employee performance reports  
+
+### 🗓️ 10. Tasks, Schedules & Attendance
+- Files: `fmtsk.*`, `fmtaskrep.*`, `fmmonatt.*`, `suptask.*`, `supatten.*`  
+- Daily tasks  
+- Task assignment  
+- Attendance monitoring  
+- Reports for attendance  
+- Task summaries  
+
+### 📑 11. Reporting System (RDLC)
+- Files: Many `*.rdlc`, `*rep.*`, `*report.*`, `Crepviewer.*`  
+- RDLC report definitions  
+- Report viewer forms  
+- Data-bound datasets  
+- Export to PDF/Excel (default ReportViewer capabilities)  
+
+### 🧪 12. Miscellaneous Modules
+- Files: `cheenv*`, `cheeq*`, `chemed*`  
+- Environmental checks  
+- Equipment checks  
+- Chemical or medicine logs  
+- Associated reports  
+
+---
+
+## 🛠️ How to Run the Project
+
+### 1. Requirements
+- Visual Studio 2019 or later  
+- .NET Framework installed  
+- SQL Server / SQL Express  
+- Report Viewer Runtime (VS usually installs it)  
+
+### 2. Steps
+1. Clone repository  
+2. Open `Farm/Farm/Farm.sln`  
+3. Restore NuGet packages  
+4. Ensure SQL Server connection string in `App.config` is valid  
+5. Build & run  
