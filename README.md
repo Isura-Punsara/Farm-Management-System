@@ -40,7 +40,6 @@ Farm-Management-System/
 │       └── SqlServerTypes/(SQL Client Types)
 │
 └── README.md
-
 ---
 
 ## ✨ System Overview
