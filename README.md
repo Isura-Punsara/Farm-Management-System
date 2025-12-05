@@ -26,6 +26,7 @@ This repository contains the full Farm Management System, including all major mo
 ---
 
 ## 📂 Project Structure
+'''
 Farm-Management-System/
 │
 ├── Farm/
@@ -40,6 +41,7 @@ Farm-Management-System/
 │       └── SqlServerTypes/(SQL Client Types)
 │
 └── README.md
+'''
 ---
 
 ## ✨ System Overview
