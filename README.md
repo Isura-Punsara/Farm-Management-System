@@ -1,3 +1,4 @@
+![Project Banner](https://raw.githubusercontent.com/Isura-Punsara/Farm-Management-System/main/banner.png)
 
 ---
 # 🐄 Farm Management System — Meat Farm Operations (WinForms + SQL Server)
