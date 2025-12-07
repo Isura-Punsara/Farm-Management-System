@@ -1,27 +1,18 @@
-
----
 # 🐄 Farm Management System — Meat Farm Operations (WinForms + SQL Server)
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Isura-Punsara/Farm-Management-System?color=green)
-![GitHub contributors](https://img.shields.io/github/contributors/Isura-Punsara/Farm-Management-System)
-![Platform](https://img.shields.io/badge/Platform-Windows%20Forms-lightgrey)
-![Database](https://img.shields.io/badge/Database-SQL%20Server-orange)
-![Reports](https://img.shields.io/badge/Reports-RDLC-yellow)
-
-
-A complete Windows Forms–based Farm Management System built for a meat-production farm.  
+A complete Windows Forms–based Farm Management System built for a meat-production farm.
 The system manages breeding, feeding, suppliers, veterinary care, inventory, employees, finance, tasks, attendance, and detailed RDLC reports.
 
-This repository contains the full Farm Management System, including all major modules and the underlying Farm application located inside the `Farm/Farm` folder.
+This repository contains the fully implemented Farm Management System, including all major modules and the underlying Farm application located inside the `Farm/Farm` folder.
 
 ---
 
 ## 📌 Tech Stack
-- **Frontend:** Windows Forms (.NET Framework)
-- **Backend:** SQL Server / SQL Express
-- **Reporting:** RDLC Reports
-- **IDE:** Visual Studio 2019 or later
-- **Other:** Report Viewer Runtime, NuGet Packages
+- **Frontend:** Windows Forms (.NET Framework)  
+- **Backend:** SQL Server / SQL Express  
+- **Reporting:** RDLC Reports  
+- **IDE:** Visual Studio 2019 or later  
+- **Other:** Report Viewer Runtime, NuGet Packages  
 
 ---
 
